@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("McvCatalog.Domain.Tests")]
+[assembly: AssemblyTitle("MvcCatalog.Data")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("McvCatalog.Domain.Tests")]
+[assembly: AssemblyProduct("MvcCatalog.Data")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("894fed5c-ca2a-40e1-8b91-defed562ba0c")]
+[assembly: Guid("d822a28b-a645-4c3e-bc83-b3e679ed813c")]
 
 // Version information for an assembly consists of the following four values:
 //

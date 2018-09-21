@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace MvcCatalog.Domain
 {
@@ -49,6 +45,26 @@ namespace MvcCatalog.Domain
             Contract.Requires<Exception>(newPassword == confirmPassword, "As senhas digitadas não coincidem.");
 
             this.Password = newPassword;
+        }
+
+        public void Authenticate(string username, string password)
+        {
+            Contract.Requires<InvalidOperationException>(this.Username.ToLower() == username, "Usuário inválido");
+            Contract.Requires<InvalidOperationException>(this.Password == username, "Senha inválida");
+        }
+
+        public void Register(string name, string email, string username, string password, string confirmPassword)
+        {
+            Contract.Requires<InvalidCastException>(name.Length > 3, "O nome deve conter mais de 3 caracteres.");
+            Contract.Requires<InvalidCastException>(Regex.IsMatch(email, @"[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z{2,4}"), "E-mail inválido.");
+            Contract.Requires<InvalidCastException>(username.Length > 6, "Nome de usuário deve ter pelo menos 6 caracteres.");
+            Contract.Requires<InvalidCastException>(password.Length > 6, "Senha deve ter pelo menos 6 caracteres.");
+            Contract.Requires<InvalidCastException>(password == confirmPassword, "As senhas informadas não coincidem.");
+
+            this.Name = name;
+            this.Email = email;
+            this.Username = username;
+            this.Password = password;
         }
     }
 }
